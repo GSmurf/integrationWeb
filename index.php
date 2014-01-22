@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <title>Mon Test d'intégration</title>
 <style type="text/css">
+body{
+	background-color: #f5cf91;
+}
 #header{
 	height: 150px;
 	background-image: url('images/header.jpg');
@@ -21,16 +24,26 @@
 	text-align: justify;
 }
 #contenant2{
-	background-color: yellow;
+	background-color: #f7f7a7;
 	clear: both; 
 }
 nav {
-	background-color: pink;
-	width: 240px;
+	background-color: #c64d04;
+	border: white double 1px;
+	color : white;
+	width: 200px;
 	left:8px;
 	top: 0px;
 	position: absolute;
 	z-index: 5;
+}
+nav a{
+	color : white;
+}
+#up{
+	position: absolute;
+	left: 35px;
+	top: 20px;
 }
 </style>
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
@@ -40,6 +53,7 @@ nav {
 <script type="text/javascript">
 $(function(){
 	$('nav').fixTo('#contenant');
+	$('#up').fixTo('#contenant2');
 	$('.scroll').jscroll({
 	    loadingHtml: '<img src="images/loading.gif" alt="Chargement" >Chargement...',
 	});
@@ -48,19 +62,17 @@ $(function(){
 </script>
 </head>
 <body>
-	<div id="header"><h1>Titre de mon site</h1></div>
+	<div id="header"><h1>Menu fixto + jscroll : infinite scrolling</h1></div>
 	<div id="contenant">
 		<nav>
 			<ul>
-				<li>menu 1</li>
-				<li>menu 2</li>
-				<li>menu 3</li>
-				<li>menu 4</li>
-				<li>menu 5</li>
-				<li>menu 6</li>
+				<li><a href="#">Top</a></li>
+				<li><a href="#tag1">Menu fixto</a></li>
+				<li><a href="#tag2">Infinite scrolling</a></li>
+				<li><a>menu 3</a></li>
 			</ul>
 		</nav>
-		<p>Quid enim tam absurdum quam delectari multis inanimis rebus, ut honore, ut gloria, ut aedificio, ut vestitu cultuque corporis, animante virtute praedito, eo qui vel amare vel, ut ita dicam, redamare possit, non admodum delectari? Nihil est
+		<p><a id="tag1"></a>Quid enim tam absurdum quam delectari multis inanimis rebus, ut honore, ut gloria, ut aedificio, ut vestitu cultuque corporis, animante virtute praedito, eo qui vel amare vel, ut ita dicam, redamare possit, non admodum delectari? Nihil est
 			enim remuneratione benevolentiae, nihil vicissitudine studiorum officiorumque iucundius.</p>
 		<p>Haec subinde Constantius audiens et quaedam referente Thalassio doctus, quem eum odisse iam conpererat lege communi, scribens ad Caesarem blandius adiumenta paulatim illi subtraxit, sollicitari se simulans ne, uti est militare otium fere
 			tumultuosum, in eius perniciem conspiraret, solisque scholis iussit esse contentum palatinis et protectorum cum Scutariis et Gentilibus, et mandabat Domitiano, ex comite largitionum, praefecto ut cum in Syriam venerit, Gallum, quem crebro
@@ -82,6 +94,9 @@ $(function(){
 			repulsum et cervicibus interclusum suis sustinerent, tum, inquam, Byzantii et postea signa illa et reliqua urbis ornanemta sanctissime custodita tenuerunt.</p>
 	</div>
 	<div id="contenant2">
+		<div id="up"><a href="#"><img src="images/arrow_up.png" alt="Retour au menu" title="Retour au menu" /></a></div>
+		<a id="tag2"></a>
+		<h1>Chargement automatique ou adieu les pagination</h1>
 		<div class="scroll">
 		    <?php include_once('page.php'); ?>
 		</div>

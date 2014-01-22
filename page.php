@@ -2,7 +2,7 @@
 $page =  $_GET['page'];
 $nextPage = $page + 1;
 
-if ($page < 20) {
+if ($page <= 10) {
 	?>
 	<h3>Page <?= $page; ?></h3>
 	<p>Ceci est mon test de chargement. automatique et je peux faire ça jusqu'au bout du monde. Maintenant c'est toi qui gère !</p>
