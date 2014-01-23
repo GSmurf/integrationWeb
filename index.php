@@ -43,7 +43,8 @@ nav a{
 #up{
 	position: absolute;
 	left: 35px;
-	top: 20px;
+	top: 0;
+	margin: 20px
 }
 </style>
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
