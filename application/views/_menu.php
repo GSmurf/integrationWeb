@@ -9,6 +9,6 @@
 		<li><a href="<?= site_url("welcome/index");?>">Site_url !!!</a></li>
 		<li><a href="pageExemple">Page <?= $page;?></a></li>
 		<li><a href="page">Lien 2 vers un test</a></li>
-		<li><a href="fdqsfq">404</a></li>
+		<li><a href="<?= site_url("lien_erreur_404");?>">404</a></li>
 	</ul>
 </nav>

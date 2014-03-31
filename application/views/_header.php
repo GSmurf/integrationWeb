@@ -11,7 +11,7 @@ $(function(){
 	$('nav').fixTo('#contenant');
 	$('#up').fixTo('#contenant2');
 	$('.scroll').jscroll({
-	    loadingHtml: '<img src="images/loading.gif" alt="Chargement" >Chargement...',
+	    loadingHtml: '<img src="/interfacePagination/images/loading.gif" alt="Chargement" >Chargement...',
 	});
 
 });

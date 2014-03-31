@@ -2,10 +2,10 @@
 include_once 'application/views/_header.php';
 $this->load->library('table');
 ?>
-<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
-<script type="text/javascript" src="js/jquery.appendGrid-1.3.4.min.js"></script>
-<link href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet"/>
-<link href="css/jquery.appendGrid-1.3.4.min.css" rel="stylesheet"/>
+<script type="text/javascript" src="/interfacePagination/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="/interfacePagination/js/jquery.appendGrid-1.3.4.min.js"></script>
+<link href="/interfacePagination/css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet"/>
+<link href="/interfacePagination/css/jquery.appendGrid-1.3.4.min.css" rel="stylesheet"/>
 <script type="text/javascript">
     $(function () {
         $('#tblAppendGrid').appendGrid({
@@ -13,11 +13,11 @@ $this->load->library('table');
             columns: [
                       { name: 'NUM', display: 'Id'},
                       { name: 'CODE', display: 'Code', ctrlCss: { width: '200px'}, displayCss: { 'color': '#ff6666'} },
-                      { name: 'AFFAIRE', display: 'Affaire', ctrlCss: { width: '50px'} },
-                      { name: 'TYPE', display: 'Type', ctrlCss: { width: '50px'} },
-                      { name: 'VISIBLE', display: 'Visible', ctrlAttr: { maxlength: 1 }, ctrlCss: { width: '50px'} },
-                      { name: 'FREQUENCE', display: 'Frequence', ctrlCss: { width: '50px'} },
-                      { name: 'ORDRE', display: 'Ordre', ctrlCss: { width: '50px'} },
+                      { name: 'AFFAIRE', display: 'Affaire' },
+                      { name: 'TYPE', display: 'Type' },
+                      { name: 'VISIBLE', display: 'Visible', ctrlAttr: { maxlength: 1 } },
+                      { name: 'FREQUENCE', display: 'Frequence' },
+                      { name: 'ORDRE', display: 'Ordre' },
                       { name: 'UPDATE_AT', display: 'Mise à jour', type: 'ui-datepicker', uiOption: { dateFormat: 'dd/mm/yy'} },
                       { name: 'CONFIG_FILE', display: 'Config_file', ctrlCss: { width: '150px', 'font-style': 'italic'} }
                   ],
