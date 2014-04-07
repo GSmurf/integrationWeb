@@ -5,7 +5,7 @@
 	<a id="tag2"></a>
 	<h1>Chargement automatique ou adieu les pagination</h1>
 	<div class="scroll">
-	    <?php include_once 'page.php';?>
+	    <?php include_once '/interfacePagination/page_exemple.php';?>
 	</div>
 </div>
 <?php }?>

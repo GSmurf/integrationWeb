@@ -2,10 +2,10 @@
 include_once 'application/views/_header.php';
 $this->load->library('table');
 ?>
-<script type="text/javascript" src="/interfacePagination/js/jquery-ui-1.10.4.custom.min.js"></script>
-<script type="text/javascript" src="/interfacePagination/js/jquery.appendGrid-1.3.4.min.js"></script>
 <link href="/interfacePagination/css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet"/>
 <link href="/interfacePagination/css/jquery.appendGrid-1.3.4.min.css" rel="stylesheet"/>
+<script type="text/javascript" src="/interfacePagination/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="/interfacePagination/js/jquery.appendGrid-1.3.4.min.js"></script>
 <script type="text/javascript">
     $(function () {
         $('#tblAppendGrid').appendGrid({
@@ -28,13 +28,28 @@ $this->load->library('table');
 // 				      removeLast: true
 				  },
 				  customFooterButtons: [
-				       { uiButton: { icons: { primary: 'ui-icon-arrowthickstop-1-s' }, label: 'Datas' }, btnAttr: { title: 'Download Data' }, click: function (evt) {alert('Les datas sont :\n' + $(document.forms[0]).serialize());} }
+				       { uiButton: { icons: { primary: 'ui-icon-arrowthickstop-1-s' }, label: 'Sauvegarder les données' }, 
+					     btnAttr: { title: 'Download Data' }, 
+					     click: function (evt) {sauvegardeDesDonnees();} 
+					   }
 				  ]
               });
         // Handle `Serialize` button click
         $('.btnSerialize').button().click(function () {
-            alert('Here is the serialized data!!\n' + $(document.forms[0]).serialize());
+            alert('Extraction des données !!\n' + $(document.forms[0]).serialize());
         });
+
+
+        function sauvegardeDesDonnees(){
+        	$.ajax({
+			  type: "POST",
+			  url: "<?= site_url("welcome/saveData");?>",
+			  data: $(document.forms[0]).serialize()
+			})
+			  .done(function( msg ) {
+// 			    alert( "Data Saved: " + msg );
+			  });
+        }
     });
 </script>
 
@@ -53,7 +68,7 @@ $this->load->library('table');
 <h2>AppendGrid module</h2>
 <p>L'idée de ce test est d'afficher dans un tableau modifiable les données d'une base de données pour pouvoir les mettre à jour aisément, script utilisé <a href="http://appendgrid.apphb.com">appendGrid</a>.</p>
 <form id="frmMain" name="frmMain" action="/Demo/Basic" method="post">
-  <button type="button" class="btnSerialize ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Demo: jQuery Serialize</span></button>
+<!--   <button type="button" class="btnSerialize ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Demo: jQuery Serialize</span></button> -->
   <table id="tblAppendGrid"></table>
 </form>  
 </p>

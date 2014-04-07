@@ -43,6 +43,7 @@
 $route['page_exemple'] = "pageExemple";
 $route['page'] = "pageExemple";
 $route['welcome/test'] = "welcome/index";
+$route['welcome/saveData'] = "welcome/saveData";
 $route['test'] = "welcome/index";
 
 $route['default_controller'] = "welcome";
